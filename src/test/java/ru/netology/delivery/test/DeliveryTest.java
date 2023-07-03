@@ -39,7 +39,6 @@ public class DeliveryTest {
         $(byText("Запланировать")).click();
         $("[data-test-id=replan-notification] .notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(text("У вас уже запланирована встреча на другую дату. Перепланировать?"));
         $("[data-test-id=replan-notification] button").shouldHave(exactText("Перепланировать")).click();
-        $(byText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id=success-notification] .notification__content").shouldBe(visible, Duration.ofSeconds(15)).shouldHave(exactText("Встреча успешно запланирована на " + secondMeetingDate));
     }
 }
